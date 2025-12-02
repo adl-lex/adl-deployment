@@ -1,0 +1,13 @@
+ba00000-lex.srv.mwn.de {
+    handle_path / {
+        respond "Hello, World!"
+    }
+    # basicauth /* {
+    #     adladmin {$BASIC_AUTH_PASSWORD}
+    # }
+    # handle_path /api/* {
+    #     uri strip_prefix /api
+    #     reverse_proxy adl-api:80
+    # }
+    # reverse_proxy adl-platform:3000
+}
