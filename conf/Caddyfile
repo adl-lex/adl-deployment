@@ -1,4 +1,7 @@
 ba00000-lex.srv.mwn.de {
+    basicauth /* {
+        adladmin {$BASIC_AUTH_PASSWORD}
+    }
     handle /api/* {
         reverse_proxy adl-api:80
     }
