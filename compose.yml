@@ -1,6 +1,7 @@
 services:
   caddy:
     image: caddy:latest
+    container_name: adl-caddy
     restart: unless-stopped
     ports:
       - "80:80"
@@ -13,9 +14,21 @@ services:
       - caddy_config:/config
     networks:
       - adl-network
+  mongodb:
+    image: ghcr.io/adl-lex/adl-mongodb:latest
+    container_name: adl-mongodb
+    env_file:
+      - ".env"
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - adl-network
 networks:
   adl-network:
     driver: bridge
 volumes:
   caddy_data:
   caddy_config:
+  mongodb_data:
