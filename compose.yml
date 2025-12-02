@@ -66,6 +66,18 @@ services:
     depends_on:
       - mongodb
     restart: unless-stopped
+  adl-platform:
+    image: ghcr.io/adl-lex/adl-platform:latest
+    container_name: adl-platform
+    env_file:
+      - ".env"
+    ports:
+      - "3000:3000"
+    networks:
+      - adl-network
+    depends_on:
+      - adl-api
+    restart: unless-stopped
 networks:
   adl-network:
     driver: bridge
