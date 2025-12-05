@@ -41,3 +41,10 @@ docker compose exec -w /etc/caddy caddy caddy reload
 ```
 
 Remember to update this repo whenever you modify the setup by committing and pushing your changes.
+
+[docker]: https://www.docker.com/
+[api]: https://github.com/adl-lex/adl-api
+[fastapi]: https://fastapi.tiangolo.com/
+[frontend]: https://github.com/adl-lex/adl-platform
+[vite]: https://vite.dev/
+[caddy]: https://caddyserver.com/
