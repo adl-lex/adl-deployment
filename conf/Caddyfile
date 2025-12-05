@@ -1,4 +1,9 @@
 ba00000-lex.srv.mwn.de, azlex.de {
+    handle /static/* {
+        uri strip_prefix /static
+        root * /wb/static
+        file_server browse
+    }
     basic_auth /* {
         adladmin {$BASIC_AUTH_PASSWORD}
     }
